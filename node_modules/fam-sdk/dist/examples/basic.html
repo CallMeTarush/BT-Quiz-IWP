@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <title>Your Website</title>
+  </head>
+
+  <body>
+    <div id="fam" style="width: 100%; height: 400px"></div>
+    <a href="#" onclick="openFamWindow()">Open New Window</a>
+
+    <!-- START FAM -->
+    <script src="https://cdn.freeallmedia.com/sdk/js/0/latest/fam.js"></script>
+    <script type="text/javascript">
+      var fam = new FreeAllMedia();
+
+      var campaignUrl = "https://cdn-demo.freeallmedia.com/campaigns/call-of-duty/index.html";
+
+      fam.iframe("fam", campaignUrl);
+
+      function openFamWindow() {
+        fam.window(campaignUrl);
+      }
+
+      fam.on("start", function () {
+        console.log("FAM experience started.");
+      });
+      fam.on("end", function () {
+        console.log("FAM experience ended.");
+      });
+      fam.on("close", function (activity) {
+        console.log(`FAM experience closed by user while on activity named "${activity.name}"`);
+      });
+      fam.on("activity:start", function (activity) {
+        console.log(`Activity named "${activity.name}" of type "${activity.type}" started.`);
+      });
+      fam.on("activity:end", function (activity, results) {
+        console.log(`Activity named "${activity.name}" of type "${activity.type}" ended with the following results:`, results);
+      });
+      fam.on("image:impression", function (activity, image) {
+        console.log(`Creative "${image.type}" shown in activity "${activity.name}"`);
+      });
+      fam.on("image:clickthrough", function (activity, image, url) {
+        console.log(`Creative "${image.type}" clicked through to url "${url}" in activity "${activity.name}"`);
+      });
+      fam.on("video:play", function (activity) {
+        console.log(`Video for activity "${activity.name}" playing.`);
+      });
+      fam.on("video:pause", function (activity) {
+        console.log(`Video for activity "${activity.name}" paused.`);
+      });
+      fam.on("video:end", function (activity) {
+        console.log(`Video for activity "${activity.name}" ended.`);
+      });
+      fam.on("video:mute", function (activity) {
+        console.log(`Video for activity "${activity.name}" muted.`);
+      });
+      fam.on("video:unmute", function (activity) {
+        console.log(`Video for activity "${activity.name}" un-muted.`);
+      });
+    </script>
+    <!-- END FAM -->
+  </body>
+</html>

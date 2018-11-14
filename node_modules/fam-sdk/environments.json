@@ -1,0 +1,41 @@
+{
+	"development": {
+		"hosts": {
+			"campaigns": "http://10.0.0.117:3000",
+			"assets": "http://10.0.0.117:3001/unoptimized",
+			"creatives": "https://fam-development.s3.amazonaws.com/assets"
+		},
+		"bucket": "fam-development"
+	},
+
+	"staging": {
+		"hosts": {
+			"campaigns": "https://staging.freeallmedia.com",
+			"assets": "https://fam-staging.s3.amazonaws.com/assets",
+			"creatives": "https://fam-staging.s3.amazonaws.com"
+		},
+		"bucket": "fam-staging"
+	},
+
+	"demo": {
+		"hosts": {
+			"campaigns": "https://demo.freeallmedia.com"
+		},
+		"bucket": "fam-demo"
+	},
+
+	"production": {
+		"hosts": {
+			"campaigns": "https://api.freeallmedia.com"
+		},
+		"bucket": "fam-production"
+	},
+
+	"testing": {
+		"hosts": {
+			"campaigns": "http://localhost:3000",
+			"assets": "http://localhost:3001/unoptimized",
+			"creatives": "https://fam-development.s3.amazonaws.com/assets"
+		}
+	}
+}

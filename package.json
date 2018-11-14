@@ -1,5 +1,5 @@
 {
-  "name": "CCS 2017",
+  "name": "ccs17",
   "version": "1.0.0",
   "description": "Computer Society of India Core Committee selections",
   "email": "csi.vit@gmail.com",
@@ -11,7 +11,7 @@
     "start": "node index.js",
     "predeploy": "echo im about to deploy",
     "postdeploy": "echo ive deployed",
-    "prepublish": "coffee --bare --compile --output lib/foo src/foo/*.coffee"
+    "prepublish": ""
   },
   "main": "lib/foo.js",
   "repository": {
@@ -31,14 +31,17 @@
     "body-parser": "^1.18.2",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.3",
+    "ejs": "^2.6.1",
     "express": "^4.16.2",
     "express-session": "^1.15.6",
     "fam-sdk": "0.0.2",
+    "forest-express-mongoose": "^2.14.5",
     "jsonwebtoken": "^8.1.0",
     "mongodb": "^2.2.33",
     "mongoose": "^4.13.5",
     "morgan": "^1.9.0",
     "passport": "^0.4.0",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "sendgrid": "^5.2.3"
   }
 }

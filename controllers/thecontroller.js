@@ -2,16 +2,7 @@
 
 var mongoose = require('mongoose'),
     Users = mongoose.model('Users'),
-    Questions = mongoose.model('Questions')
-
-exports.users = function(req,res) {
-    Users.find({}, function(err, user) {
-        if (err)
-          res.send(err);
-        res.json(user);
-    });
-};
-
+    Questions = mongoose.model('Question')
 
 exports.showuser = function(req, res) {
     Users.findById(req.params.userId,function(err, user) {
@@ -82,23 +73,6 @@ exports.updateuser = function(req, res) {
     });
 };
 
-exports.adduser = function(req, res) {
-    var questions = [];
-    for(var i=0; i<10; i++)
-      var random = Math.floor((Math.random() * 20) + 1);
-      if(questions.includes(random))
-        i--;
-      else
-        questions.push(random);
-    
-    var new_user = new Users(req.name, req.userpwd, req.regno, req.email, req.phone, questions);
-    new_user.save(function(err, user) {
-      if (err)
-        res.send(err);
-      res.json(user);
-    });
-};
-
 exports.showuser = function(req, res) {
     Users.findById(req.params.userId,function(err, user) {
       if (err)
@@ -124,5 +98,5 @@ exports.updateuser = function(req, res) {
         res.json({ message: 'User successfully deleted' });
       });
 
-      
+
     };
